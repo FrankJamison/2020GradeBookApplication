@@ -26,21 +26,26 @@ This repo is portfolio-ready: it demonstrates object-oriented design (inheritanc
 ## Tech stack
 
 - Language: C#
-- Runtime: .NET Core (netcoreapp2.0)
+- Runtime: .NET (net8.0)
 - Testing: xUnit
 - Serialization: Newtonsoft.Json
+
+## Prerequisites
+
+- .NET SDK 8.x installed (`dotnet --version` should show 8.*)
 
 ## How to run
 
 From the repo root:
 
+- Build:
+  - `dotnet build .\GradeBook.sln -c Release`
+
 - Run the app:
-  - `cd GradeBook`
-  - `dotnet run`
+  - `dotnet run --project .\GradeBook\GradeBook.csproj -c Release`
 
 - Run tests:
-  - `cd GradeBookTests`
-  - `dotnet test`
+  - `dotnet test .\GradeBookTests\GradeBookTests.csproj -c Release`
 
 ## Example usage (interactive)
 
@@ -78,3 +83,4 @@ When a gradebook is open:
 ## Notes
 
 - Ranked grading requires at least 5 students (by design), so add at least five students with grades before using ranked statistics.
+- The app persists gradebooks to `<Name>.gdbk` in the current working directory when you run `save`.
